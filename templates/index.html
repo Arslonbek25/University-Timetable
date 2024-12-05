@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>University Timetable</title>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				margin: 20px;
+				background-color: #f5f5f5;
+			}
+			h1,
+			h2 {
+				color: #2c3e50;
+				text-align: center;
+			}
+			form {
+				max-width: 400px;
+				margin: 30px auto;
+				padding: 20px;
+				background-color: #fff;
+				border: 1px solid #ccc;
+				border-radius: 5px;
+			}
+			label {
+				font-size: 1.2em;
+				display: block;
+				margin-bottom: 10px;
+			}
+			select {
+				width: 100%;
+				padding: 8px;
+				font-size: 1em;
+				margin-bottom: 20px;
+			}
+			button {
+				width: 100%;
+				padding: 10px;
+				background-color: #2980b9;
+				color: white;
+				border: none;
+				font-size: 1em;
+				cursor: pointer;
+				border-radius: 5px;
+			}
+			button:hover {
+				background-color: #3498db;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Mini project of Arslan Madyarov</h1>
+		<h2>University Timetable</h2>
+		<form method="GET" action="/timetable">
+			<label for="level">Select Level:</label>
+			<select id="level" name="level" required>
+				{% for level in levels %}
+				<option value="{{ level[0] }}">{{ level[0] }}</option>
+				{% endfor %}
+			</select>
+			<button type="submit">Submit</button>
+		</form>
+	</body>
+</html>
